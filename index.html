@@ -8,7 +8,7 @@
 
 <body>
   <!-- 基础用法 -->
-  <!-- <video src="./test.mp4" id="vs" width="400" height="225" controls controlslist="nodownload nofullscreen"></video> -->
+  <video src="./test.mp4" id="vs" width="400" height="225" controls controlslist="nodownload nofullscreen"></video>
   <!-- 贴图 -->
   <!-- <video src="./test.mp4" width="400" height="225" controls poster="./poster.jpg"></video> -->
   <!-- 自动播放 -->
@@ -43,7 +43,7 @@
   </script> -->
 
   <!-- 备用地址切换 -->
-  <video id="_source" controls poster="./poster.jpg" width="400" height="225">
+  <!-- <video id="_source" controls poster="./poster.jpg" width="400" height="225">
       <source src="./test3.mp4" type="video/mp4">
       <source src="./test4.mp4" type="video/mp4">
       <source src="./test5.mp4" type="video/mp4">
@@ -54,6 +54,76 @@
     setTimeout(function() {
       console.log('src', v.currentSrc)
     }, 1000);
+  </script> -->
+  
+  <!-- Video事件 -->
+  <script type="text/javascript">
+    var v = document.getElementById('vs');
+    console.log('v.duration', v.duration);
+    // loadstart
+    v.addEventListener('loadstart', function(e) {
+      console.log('loadstart', v.duration);
+    });
+    // durationchange
+    v.addEventListener('durationchange', function(e) {
+      console.log('durationchange', v.duration);
+    });
+    // loadedmetadata
+    v.addEventListener('loadedmetadata', function(e) {
+      console.log('loadedmetadata');
+    });
+    // loadeddata
+    v.addEventListener('loadeddata', function(e) {
+      console.log('loadeddata');
+    });
+    // progress
+    v.addEventListener('progress', function(e) {
+      console.log('progress');
+    });
+    // canplay
+    v.addEventListener('canplay', function(e) {
+      console.log('canplay');
+    });
+    // canplaythrough
+    v.addEventListener('canplaythrough', function(e) {
+      console.log('canplaythrough');
+    });
+    // play
+    v.addEventListener('play', function(e) {
+      console.log('play');
+    });
+    // pause
+    v.addEventListener('pause', function(e) {
+      console.log('pause');
+    });
+    // seeking
+    v.addEventListener('seeking', function(e) {
+      console.log('seeking');
+    });
+    // seeded
+    v.addEventListener('seeked', function(e) {
+      console.log('seeded');
+    });
+    // waiting
+    v.addEventListener('waiting', function(e) {
+      console.log('waiting');
+    });
+    // playing
+    v.addEventListener('playing', function(e) {
+      console.log('playing');
+    });
+    // timeupdate
+    v.addEventListener('timeupdate', function(e) {
+      console.log('timeupdate');
+    });
+    // ended
+    v.addEventListener('ended', function(e) {
+      console.log('ended');
+    });
+    // error
+    v.addEventListener('error', function(e) {
+      console.log('error', e);
+    });
   </script>
 
 </body>
