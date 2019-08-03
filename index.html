@@ -20,13 +20,19 @@
   <!-- 预加载 -->
   <!-- <video src="./test.mp4" width="400" height="225" preload controls poster="./poster.jpg"></video> -->
   <!-- 音量控制 -->
-  <video src="./test.mp4" id="_volume"width="400" height="225" preload controls poster="./poster.jpg"></video>
+  <!-- <video src="./test.mp4" id="_volume"width="400" height="225" preload controls poster="./poster.jpg"></video>
   <script type="text/javascript">
     var v = document.getElementById("_volume");
     v.volume=0.5;
+  </script> -->
+  <!-- 播放时间控制 -->
+  <video src="./test.mp4" id="_time" width="400" height="225" controls poster="./poster.jpg"></video>
+  <script type="text/javascript">
+    var v = document.getElementById('_time');
+    console.log(v.currentTime);
+    v.currentTime = 60;// 单位：秒
   </script>
 
-  
 </body>
 
 </html>
