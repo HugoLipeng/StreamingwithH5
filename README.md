@@ -127,12 +127,24 @@ ffmpeg -re -i test.mp4 -vcodec libx264 -acodec aac -strict -2 -f flv rtmp://loca
 1. 打开 Safari
 2. 直接输入 http://localhost:8080/hls/stream.m3u8
 
-##### 资料
+##### nginx推流资料参考
 
-1. [nginx 视频推流](http://liuhong1happy.github.io/network/2016/08/01/nginx-rtmp)
-
-
+[nginx 视频推流](http://liuhong1happy.github.io/network/2016/08/01/nginx-rtmp)
 
 
 
-Reference From: https://github.com/cucygh/h5live
+#### Videojs
+npm install video.js  
+或者  
+<link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+<script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+
+https://videojs.github.io/http-streaming/
+
+
+#### flv.js
+npm install --save flv.js
+
+
+Reference From: https://github.com/cucygh/h5live  
+其他对应这个课程的博客笔记：https://www.my-fe.pub/post/live-broadcast-note.html
