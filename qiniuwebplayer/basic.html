@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Qiniu Web Player Basic Demo</title>
+  <script src="https://sdk-release.qnsdk.com/qiniu-web-player-1.2.3.js"></script>
+</head>
+<body>
+  <div id="player" style="width: 640px; height: 480px;"></div>
+  <button id="changeurl" onclick="changeUrl()">切换播放地址</button>
+
+  <script>
+    var container = document.getElementById("player");
+    var player = new QPlayer({
+      url: "http://demo-videos.qnsdk.com/movies/qiniu.mp4",
+      container: container,
+      autoplay: true,
+    }) 
+
+    function changeUrl(){
+      alert("切换播放地址");
+      player.destroy();
+      var player2 = new QPlayer({
+        url: "http://demo-videos.qnsdk.com/movies/qiniu.mp4",
+        container: container,
+        autoplay: true,
+    }) 
+    }
+  </script>
+</body>
+</html>
