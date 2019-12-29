@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Qiniu Web Player Basic Demo</title>
+    <script src="https://sdk-release.qnsdk.com/qiniu-web-player-1.2.3.js"></script>
+</head>
+<body>
+<div id="player" style="width: 320px; height: 240px;"></div>
+<!-- <div style="height: 300px;width: 100%">占位</div> -->
+<div id="player1" style="width: 320px; height: 240px;"></div>
+
+<script>
+    var container = document.getElementById("player");
+    var container1 = document.getElementById("player1");
+    var player = new QPlayer({
+        url: "http://demo-videos.qnsdk.com/movies/qiniu.mp4",
+        container: container,
+        autoplay: true,
+    });
+    var player1 = new QPlayer({
+        url: "http://demo-videos.qnsdk.com/movies/qiniu.mp4",
+        container: container1,
+        autoplay: true,
+    })
+</script>
+</body>
+</html>
