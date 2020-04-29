@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Player Demo</title>
+    <script src="https://sdk-release.qnsdk.com/qiniu-web-player-1.2.3.js"></script>
+</head>
+<body>
+<div id="player" style="width: 640px; height: 480px;"></div>
+<script>
+    var container = document.getElementById("player");
+    var arr = [];
+    var str = "abcdefghabcdefgh";
+    for (var i = 0, j = str.length; i < j; ++i) {
+        arr.push(str.charCodeAt(i));
+    }
+    var tmp = new Uint8Array(arr);
+    var player = new QPlayer({
+            url: "http://ohjxta96r.bkt.clouddn.com/oceans_drm.m3u8",
+            container: container,
+            autoplay: true,
+            hls: {
+                DRMKey: tmp, // 七牛 HLS DRM 加密密钥
+            }
+        })
+    ;
+    //lisnler
+    player.on('error', function (e) {
+        alert(e);
+    });
+
+</script>
+</body>
+</html>

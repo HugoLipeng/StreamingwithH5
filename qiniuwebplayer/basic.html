@@ -10,6 +10,7 @@
 <body>
   <div id="player" style="width: 640px; height: 480px;"></div>
   <button id="changeurl" onclick="changeUrl()">切换播放地址</button>
+  <button id="offTimeUpdate" onclick="offTimeUpdate()">去掉时间监听</button>
 
   <script>
     var container = document.getElementById("player");
@@ -17,16 +18,49 @@
       url: "http://demo-videos.qnsdk.com/movies/qiniu.mp4",
       container: container,
       autoplay: true,
+  //     qualityList: [{
+  //   url: "http://pkeamo5ex.bkt.clouddn.com/snow_miku_qualities/starnight_snow_240p.mp4",
+  //   name: "低清240P",
+  // }, {
+  //   url: "http://pkeamo5ex.bkt.clouddn.com/snow_miku_qualities/starnight_snow_480p.mp4",
+  //   name: "标清480P",
+  // }, {
+  //   url: "http://pkeamo5ex.bkS.clouddn.com/snow_miku_qualities/starnight_snow_720p.mp4",
+  //   name: "高清720P",
+  // }, {
+  //   url: "http://pkeamo5ex.bkt.clouddn.com/snow_miku_qualities/starnight_snow_1080p.mp4",
+  //   name: "超清1080P",
+  // }],
     }) 
+
+    //lisnler
+    player.on('error', function (e) {
+        // alert(e);
+        console.log(e);
+    });
+
+    function handleTimeUpdate() {
+      var nowtime = parseInt(player.currentTime);
+      var totaltime = parseInt(player.totalTime);
+      console.log(nowtime);
+      console.log(totaltime);
+    }
+
+    player.on("timeupdate", handleTimeUpdate);
 
     function changeUrl(){
       alert("切换播放地址");
       player.destroy();
       var player2 = new QPlayer({
-        url: "http://demo-videos.qnsdk.com/movies/qiniu.mp4",
+        url: "http://pkeamo5ex.bkt.clouddn.com/snow_miku_qualities/starnight_snow_240p.mp4",
         container: container,
         autoplay: true,
     }) 
+    }
+
+    function offTimeUpdate() {
+      console.log("timeupdate off");
+      player.off("timeupdate", handleTimeUpdate)
     }
   </script>
 </body>
