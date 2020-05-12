@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="referrer" content="no-referrer">
+    <title>xgplayer</title>
+    <style type="text/css">
+      html, body {width:100%;height:100%;margin:auto;overflow: hidden;}
+      body {display:flex;}
+      #mse {flex:auto;}
+    </style>
+    <script type="text/javascript">
+      window.addEventListener('resize',function(){document.getElementById('mse').style.height=window.innerHeight+'px';});
+    </script>
+  </head>
+  <body>
+    <div id="mse"></div>
+    <!--http://h5player.bytedance.com/-->>
+    <script src="//cdn.jsdelivr.net/npm/xgplayer/browser/index.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      let player=new Player({
+        id: 'mse',
+        autoplay: false,
+        volume: 0.3,
+        url:'http://demo-videos.qnsdk.com/movies/qiniu.mp4',
+        // poster: "//s2.pstatp.com/cdn/expire-1-M/byted-player-videos/1.0.0/poster.jpg",
+        
+        playsinline: true,
+        height: window.innerHeight,
+        width: window.innerWidth
+      });
+    </script>
+  </body>
+</html>
