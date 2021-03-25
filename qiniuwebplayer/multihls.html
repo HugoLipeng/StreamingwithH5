@@ -16,22 +16,23 @@
   <script>
     var container = document.getElementById("player");
     var player = new QPlayer({
-      url: "http://demo-videos.qnsdk.com/movies/qiniu.mp4",
+      // url: "http://demo-videos.qnsdk.com/movies/qiniu.mp4",
+      // url: "https://qvs.qiniuapi.com/v1/record/2xenzw2sf6m3x/jianyun/1598338830726-1598342436296-3580100.m3u8?pm3u8/0/expire/7200&e=1598433999&token=VoqJC1_o_NNdAoIZ28XIpzZat81navLQ50zua1DB:XM8CsjKJEFwM07kfyahVrueOpAo",
       container: container,
-      autoplay: true,
-  //     qualityList: [{
-  //   url: "http://pu3t7shcc.bkt.clouddn.com/0-hls.m3u8",
-  //   name: "低清240P",
-  // }, {
-  //   url: "http://pkeamo5ex.bkt.clouddn.com/snow_miku_qualities/starnight_snow_480p.mp4",
-  //   name: "标清480P",
-  // }, {
-  //   url: "http://pkeamo5ex.bkS.clouddn.com/snow_miku_qualities/starnight_snow_720p.mp4",
-  //   name: "高清720P",
-  // }, {
-  //   url: "http://pkeamo5ex.bkt.clouddn.com/snow_miku_qualities/starnight_snow_1080p.mp4",
-  //   name: "超清1080P",
-  // }],
+      autoplay: false,
+      qualityList: [{
+    url: "http://pkeamo5ex.bkt.clouddn.com/snow_miku_qualities/starnight_snow_240p.mp4",
+    name: "低清240P",
+  }, {
+    url: "http://pkeamo5ex.bkt.clouddn.com/snow_miku_qualities/starnight_snow_480p.mp4",
+    name: "标清480P",
+  }, {
+    url: "http://pkeamo5ex.bkS.clouddn.com/snow_miku_qualities/starnight_snow_720p.mp4",
+    name: "高清720P",
+  }, {
+    url: "http://pkeamo5ex.bkt.clouddn.com/snow_miku_qualities/starnight_snow_1080p.mp4",
+    name: "超清1080P",
+  }],
     }) 
 
 

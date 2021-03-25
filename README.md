@@ -141,6 +141,7 @@ npm install video.js
 
 https://videojs.github.io/http-streaming/
 
+https://docs.videojs.com/tutorial-faq.html
 
 #### flv.js
 npm install --save flv.js

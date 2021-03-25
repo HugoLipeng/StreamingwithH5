@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name=viewport
+    content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+  <meta name="referrer" content="no-referrer">
+  <title>xgplayer</title>
+  <style type="text/css">
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div>请输入播放地址:
+    <input id="inputUrl" type="text" />
+    <button onclick="handleUrl()">完成</button>
+    <div id="mse" style="width:100%;"></div>
+    <script src="//cdn.jsdelivr.net/npm/xgplayer@1.1.4/browser/index.js" charset="utf-8"></script>
+    <script src="//cdn.jsdelivr.net/npm/xgplayer-hls.js/browser/index.js" charset="utf-8"></script>
+    <script>
+      var playUrl = "your hls url";
+      function handleUrl() {
+        playUrl = document.getElementById("inputUrl").value;
+        play();
+      }
+      function play() {
+        let player = new HlsJsPlayer({
+          "id": "mse",
+          "playsinline": true,
+          "whitelist": [
+            ""
+          ],
+          // "autoplay": true,
+          "x5-video-orientation": "portraint",
+          "x5-video-player-type": "h5",
+          "url": playUrl,
+          "width": "100%",
+        });
+      }
+    </script>
+</body>
+
+</html>

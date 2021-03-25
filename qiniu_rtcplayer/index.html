@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Qiniu RTPlayer Demo</title>
+  <script src="qn-rtplayer-web.js"></script>
+</head>
+<body>
+  <div>请输入播放地址:
+    <input id="inputUrl" type="text" />
+    <button onclick="handleUrl()">完成</button>
+    <div id="root" style="width:100%;"></div>
+</body>
+<script>
+    var playUrl = "webrtc://pili-hls.qnsdk.com/sdk-live/timestamp.m3u8";
+    const player = new QNRTPlayer.QNRTPlayer();
+    // 2. 初始化配置信息
+    player.init({
+        'width':"100%",
+        'height':"100%",
+        "className":'aaa',
+        'playsinline':true,
+        "controls":true
+    });
+    // 3. 传入播放地址及容器，开始播放
+    function handleUrl(){
+        playUrl = document.getElementById("inputUrl").value;
+        player.play(
+            playUrl,
+            document.getElementById("root"),
+        );
+    }
+
+
+    player.on('error', (res ) => {
+        console.log(1111,res);
+    });
+    player.on('stats', (data) => {
+       console.log(2222,data);
+    });
+    player.on('log', (data) => {
+        console.log(3333,data);
+    });
+</script>
+</html>

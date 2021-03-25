@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>flv.js</title>
+    <script src="https://gebo.is135282.com/flv.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div>请输入播放地址:
+        <input id="inputUrl" type="text" />
+        <button onclick="handleUrl()">完成</button>
+    </div>
+    <video id="videoElement" controls></video>
+    <script>
+        var flvjs = window.flvjs;
+        var globalUrl = "";
+
+        function playVideo() {
+            if (flvjs.isSupported()) {
+                var videoElement = document.getElementById('videoElement')
+                var flvPlayer = flvjs.createPlayer({
+                    type: 'flv',
+                    url: globalUrl
+                })
+                flvPlayer.attachMediaElement(videoElement)
+                flvPlayer.load()
+                flvPlayer.play()
+            }
+        }
+
+        function handleUrl() {
+            globalUrl = document.getElementById("inputUrl").value;
+            playVideo();
+        }
+    </script>
+</body>
+
+</html>

@@ -8,3 +8,5 @@ Release/
 *.crx
 *.pem
 *.zip
+.idea/
+.vscode/

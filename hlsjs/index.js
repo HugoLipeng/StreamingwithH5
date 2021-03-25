@@ -3,7 +3,7 @@ var video = document.querySelector('video')
 var btn = document.querySelector('.btn')
 var player = document.querySelector('.player')
 // var url = 'http://127.0.0.1:7002/live/movie.m3u8'
-var url = 'http://live.streamingfast.net/osmflivech4.m3u8'
+var url = ''
 if (Hls.isSupported()) {
   var hls = new Hls()
   hls.loadSource(url)

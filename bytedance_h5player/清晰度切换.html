@@ -1,3 +1,13 @@
+<!--
+    let player = new Player({
+  el:document.querySelector('#mse'),
+  url: 'video_url',
+  definitionActive: 'click'
+});
+
+player.emit('resourceReady', [{name: '高清', url: 'url1'}, {name: '超清', url: 'url2'}]);
+-->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,7 +33,7 @@
         id: 'mse',
         autoplay: false,
         volume: 0.3,
-        url:'',
+        url:'http://demo-videos.qnsdk.com/movies/qiniu.mp4',
         // poster: "//s2.pstatp.com/cdn/expire-1-M/byted-player-videos/1.0.0/poster.jpg",
         
         playsinline: true,
