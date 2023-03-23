@@ -12,13 +12,32 @@
   <div>请输入播放地址:
     <input id="inputUrl" type="text" />
     <button onclick="handleUrl()">完成</button>
-    <div id="root" style="width:100%;"></div>
+    <button onclick="handlePause()">暂停</button>
+    <button onclick="handleResume()">恢复</button>
+    <button onclick="handleStop()">停止</button>
+    <button onclick="handleRelease()">释放</button>
+    <button onclick="handleChangeUrl()">切换</button>
+    <div id="root" style="width:50%;"></div>
+    <div id="root2" style="width:50%;"></div>
 </body>
 <script>
-    var playUrl = "webrtc://pili-hls.qnsdk.com/sdk-live/timestamp.m3u8";
+    var playUrl = "https://live-pilidemo.cloudvdn.com/pilidemo/timestamp.m3u8";
+    var playUrl2 = "webrtc://xxxxxx";
+    QNRTPlayer.QNRTPlayer.setLogLevel("disable");
     const player = new QNRTPlayer.QNRTPlayer();
+    // player.setLogLevel("disable");
     // 2. 初始化配置信息
     player.init({
+        'width':"100%",
+        'height':"100%",
+        "className":'aaa',
+        'playsinline':true,
+        "controls":true,
+        // "audioOnly":true
+    });
+    const player2 = new QNRTPlayer.QNRTPlayer();
+    // 2. 初始化配置信息
+    player2.init({
         'width':"100%",
         'height':"100%",
         "className":'aaa',
@@ -32,6 +51,31 @@
             playUrl,
             document.getElementById("root"),
         );
+        // player2.play(
+        //     playUrl2,
+        //     document.getElementById("root2"),
+        // );
+    }
+    function handleChangeUrl(){
+        var newPlayUrl = "webrtc://qvs-live-webrtc.cpgroup.cn:1240/2xenzw32d1rf9/15010400402000000000_15010400401320001552";
+        player2.play(
+            newPlayUrl,
+            document.getElementById("root"),
+        );
+    }
+    
+
+    function handleResume(){
+        player.resume();
+    }
+    function handlePause(){
+        player.pause();
+    }
+    function handleStop(){
+        player.stop();
+    }
+    function handleRelease() {
+        player.release();
     }
 
 
